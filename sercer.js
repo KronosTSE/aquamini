@@ -1,4 +1,3 @@
-```js
 import express from 'express'
 import axios from 'axios'
 import cors from 'cors'
@@ -38,6 +37,3 @@ app.post('/order', async (req, res) => {
 })
 
 app.listen(PORT, () => console.log('Server listening on', PORT))
-```
-
----
