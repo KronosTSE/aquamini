@@ -1,4 +1,3 @@
-```css
 body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:#f6f8fb; margin:0 }
 .container { max-width:480px; margin:40px auto; padding:20px; background:#fff; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.06) }
 h1{ margin:0 0 12px }
@@ -6,6 +5,3 @@ input{ width:100%; padding:10px; margin:8px 0; box-sizing:border-box; border-rad
 button{ width:100%; padding:12px; border-radius:8px; border:none; background:#0077cc; color:#fff; font-weight:600; cursor:pointer }
 .status{ margin-top:10px }
 .hint{ margin-top:14px; color:#666; font-size:13px }
-```
-
----
