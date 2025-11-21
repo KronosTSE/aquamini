@@ -104,7 +104,7 @@ app.post(`/webhook/${BOT_TOKEN}`, async (req, res) => {
 
     await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       chat_id: chatId,
-      text: "📞 Контакты Aquamarin:\n\n+7 700 333 65 65\"
+      text: "📞 Контакты Aquamarin:\n\n+7 700 333 65 65"
     });
   }
 
