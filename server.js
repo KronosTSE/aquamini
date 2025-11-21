@@ -66,5 +66,48 @@ app.post('/webhook', async (req, res) => {
 
   res.sendStatus(200);
 });
+app.post(`/webhook/${BOT_TOKEN}`, async (req, res) => {
+  const body = req.body;
 
+  // Обработка команды /start
+  if (body.message && body.message.text === "/start") {
+    const chatId = body.message.chat.id;
+
+    await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      chat_id: chatId,
+      text: "Добро пожаловать в Aquamarin 💧\nВыберите действие:",
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: "💧 Сделать заказ",
+              web_app: { url: "https://aquamini-frontend.vercel.app" }
+            }
+          ],
+          [
+            { text: "📞 Контакты", callback_data: "contacts" }
+          ],
+          [
+            {
+              text: "🌐 Перейти на сайт",
+              url: "https://aqua-marine.kz"
+            }
+          ]
+        ]
+      }
+    });
+  }
+
+  // Обработка кнопки "Контакты"
+  if (body.callback_query && body.callback_query.data === "contacts") {
+    const chatId = body.callback_query.message.chat.id;
+
+    await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      chat_id: chatId,
+      text: "📞 Контакты Aquamarin:\n\n+7 700 333 65 65\"
+    });
+  }
+
+  res.send({ ok: true });
+});
 app.listen(PORT, () => console.log('Server listening on', PORT));
