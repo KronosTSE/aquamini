@@ -59,7 +59,7 @@ app.post('/webhook', async (req, res) => {
 
     await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       chat_id,
-      text: 'Привет! Добро пожаловать в Aquamarin. Сделайте заказ воды прямо из бота:',
+      text: 'Привет! Добро пожаловать в Aquamarine. Сделайте заказ воды прямо из бота:',
       ...keyboard
     });
   }
@@ -75,7 +75,7 @@ app.post(`/webhook/${BOT_TOKEN}`, async (req, res) => {
 
     await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       chat_id: chatId,
-      text: "Добро пожаловать в Aquamarin 💧\nВыберите действие:",
+      text: "Добро пожаловать в Aquamarine 💧\nВыберите действие:",
       reply_markup: {
         inline_keyboard: [
           [
@@ -104,7 +104,7 @@ app.post(`/webhook/${BOT_TOKEN}`, async (req, res) => {
 
     await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       chat_id: chatId,
-      text: "📞 Контакты Aquamarin:\n\n+7 700 333 65 65"
+      text: "📞 Контакты Aquamarine:\n\n+7 700 333 65 65"
     });
   }
 
