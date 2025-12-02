@@ -68,7 +68,7 @@ app.post('/webhook', async (req, res) => {
 
     await axios.post(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       chat_id,
-      text: 'Привет! Добро пожаловать в Aquamarin. Сделайте заказ воды прямо из бота:',
+      text: 'Привет! Добро пожаловать в Aquamarine. Сделайте заказ воды прямо из бота:',
       ...keyboard
     });
   }
